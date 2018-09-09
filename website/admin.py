@@ -4,7 +4,6 @@ from .models import (
     Post
 )
 
-# Register your models here.
 
 @admin.register(Tag)
 class TagsAdmin(admin.ModelAdmin):

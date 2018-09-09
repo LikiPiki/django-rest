@@ -10,6 +10,7 @@ class TagSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
+    tags = TagSerializer(many=True, read_only=True)
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = ('title', 'content', 'likes', 'created_at', 'tags')
